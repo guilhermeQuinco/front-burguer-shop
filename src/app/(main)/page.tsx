@@ -1,16 +1,15 @@
 import { IItem } from "@/@types";
 import { getAllItems } from "@/services/item";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { Hero } from "./_components/hero";
+import BurguerSection from "./_components/sections/burguer";
+import Box from "./_components/sections/box";
 
 export default async function Home() {
-  const items: IItem[] = await getAllItems();
-
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      {items.map((item) => (
-        <span key={item.id}>{item.name}</span>
-      ))}
-    </div>
+    <>
+      <Hero />
+      <BurguerSection />
+      <Box />
+    </>
   );
 }
